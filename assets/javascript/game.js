@@ -1,50 +1,82 @@
-$( document ).ready(function(){
-	
-	var randomNumber = Math.floor(Math.random() * 100);
-		$("#random").text(number);
+$(document).ready(function(){
+  var randomNumber=Math.floor(Math.random()*100)
 
-	var crystalNumber1 = Math.floor(Math.random() * 10);
-		$("#Crystal-1").on("click" function(){
-			counter = counter + crystalNumber1;
-			console.log("New counter= " + counter)
-		})
-	var crystalNumber2 = Math.floor(Math.random() * 10);
-		$("#Crystal-2").on("click" function(){
-			counter = counter + crystalNumber2;
-			console.log("New counter= " + counter)
-		})	
-	var crystalNumber3 = Math.floor(Math.random() * 10);
-		$("#Crystal-3").on("click" function(){
-			counter = counter + crystalNumber3;
-			console.log("New counter= " + counter)
-		})
-	var crystalNumber4 = Math.floor(Math.random() * 10);
-		$("#Crystal-4").on("click" function(){
-			counter = counter + crystalNumber4;
-			console.log("New counter= " + counter)
-		})
+  $("#random").text(randomNumber);
 
-	var wins = 0;
-	var losses = 0;
-	var counter = 0;
+  var num1= Math.floor(Math.random()*10)
+  var num2= Math.floor(Math.random()*10)
+  var num3= Math.floor(Math.random()*10)
+  var num4= Math.floor(Math.random()*10)
 
+  var countTotal= 0; 
+  var wins= 0;
+  var losses = 0;
 
-	$("#wins").text(wins);
-	$("#losses").text(losses);
+$("#wins").text(wins);
+$("#losses").text(losses);
+
+function gameReset(){
+      randomNumber = Math.floor(Math.random()* 100);
+      console.log(Random)
+      $("#random").text(randomNumber);
+      crystalNum1 = Math.floor(Math.random()*10);
+      crystalNum2 = Math.floor(Math.random()*10);
+      crystalNum3 = Math.floor(Math.random()*10);
+      crystalNum4 = Math.floor(Math.random()*10);
+      countTotal = 0;
+      $("#counter").text(countTotal);
+      } 
 
 
-	if(counter === randomNumber){
-		wins++;
-		counter = [];
-		randomNumber = Math.floor(Math.random() * 100);
-		crystalNumber = Math.floor(Math.random() * 10);
-	}
-	
-	else if(counter > randomNumber)
-		losses++;
-		counter = [];
-		randomNumber = Math.floor(Math.random() * 100);
-		crystalNumber = Math.floor(Math.random() * 10);
-	}
+  $("#Crystal-1").on ('click', function(){
+    countTotal = countTotal + crystalNum1;
+    $("#counter").text(userTotal); 
 
-}
+        if (countTotal == randomNumber){
+          wins++;
+          alert("You win!");
+        }
+        else if ( countTotal > randomNumber){
+          losses++;
+          alert("You lose! You're a big loser!")
+        }   
+  })  
+  $("#Crystal-2").on ('click', function(){
+    countTotal = countTotal + crystalNum2;
+    $("#counter").text(countTotal); 
+        if (countTotal == randomNumber){
+          wins++;
+          alert("You win!");
+        }
+        else if (countTotal > randomNumber){
+          losses++;
+          alert("You lose! You're a big loser!")
+        }   
+  })  
+  $("#Crystal-3").on ('click', function(){
+    countTotal = countTotal + crystalNum3;
+    $("#counter").text(countTotal);
+
+         if (countTotal == randomNumber){
+          wins++;
+          alert("You win!");
+        }
+        else if (countTotal > randomNumber){
+          losses++;
+          alert("You lose! You're a big loser!")
+        }   
+  })  
+  $("#Crystal-4").on ('click', function(){
+    countTotal = countTotal + crystalNum4;
+    $("#counter").text(countTotal); 
+      
+        if (countTotal == randomNumber){
+          wins++;
+          alert("You win!");
+        }
+        else if (countTotal > randomNumber){
+          losses++;
+          alert("You lose! You're a big loser!")
+        }   
+  });   
+}); 
