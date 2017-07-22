@@ -49,6 +49,11 @@ header {
 	padding-top: 10px;
 }
 
+#random {
+	font-family: 'Anton', sans-serif;
+	color: black;
+}
+
 #Dash-Count {
 	width: 130px;
 	height: 100px;
