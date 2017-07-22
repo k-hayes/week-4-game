@@ -30,7 +30,7 @@ function gameReset(){
 
   $("#Crystal-1").on ('click', function(){
     countTotal = countTotal + crystalNum1;
-    $("#counter").text(userTotal); 
+    $("#counter").text(countTotal); 
 
         if (countTotal == randomNumber){
           wins++;
